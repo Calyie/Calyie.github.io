@@ -19,9 +19,14 @@
             display: none;
             opacity: 0;
             transition: opacity 0.5s ease-in-out;
-            padding: 2rem;
+            padding: 1rem; /* Smaller padding for mobile */
             align-items: center;
             justify-content: center;
+        }
+        @media (min-width: 768px) {
+            .slide {
+                padding: 2rem; /* Larger padding for desktop */
+            }
         }
         .slide.active {
             display: flex;
@@ -104,11 +109,11 @@
 
 <!-- Slide 1: Title Slide -->
 <div class="slide active items-center justify-center p-4">
-    <div class="slide-content flex items-center justify-center p-12 text-white" style="background-image: linear-gradient(135deg, #14532d, #15803d);">
+    <div class="slide-content flex items-center justify-center p-8 md:p-12 text-white" style="background-image: linear-gradient(135deg, #14532d, #15803d);">
         <div class="text-center animate-in">
-            <h1 class="text-8xl font-extrabold mb-4">BorealCarbon</h1>
-            <h2 class="text-3xl mb-8 text-green-200">AI-Powered Carbon Management for Canadian SMEs.</h2>
-            <div class="text-xl space-y-2 text-green-100">
+            <h1 class="text-5xl sm:text-6xl md:text-8xl font-extrabold mb-4">BorealCarbon</h1>
+            <h2 class="text-xl sm:text-2xl md:text-3xl mb-8 text-green-200">AI-Powered Carbon Management for Canadian SMEs.</h2>
+            <div class="text-lg md:text-xl space-y-2 text-green-100">
                 <p><strong>Philomina Nnona</strong> - Founder & CEO</p>
                 <p>nnonaphilomina@gmail.com | +12899433296</p>
                 <p class="font-bold mt-6 text-white bg-white/20 inline-block px-4 py-2 rounded-lg">Seeking $250K Seed Funding</p>
@@ -120,13 +125,13 @@
 
 <!-- Slide 2: The Problem -->
 <div class="slide items-center justify-center p-4">
-    <div class="slide-content p-12 animate-in">
-        <h1 class="text-2xl font-bold text-green-700 mb-2">The Problem</h1>
-        <h2 class="text-5xl font-extrabold mb-10">Canadian SMEs are Facing a Regulatory Tsunami.</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div class="slide-content p-6 md:p-12 animate-in">
+        <h1 class="text-xl md:text-2xl font-bold text-green-700 mb-2">The Problem</h1>
+        <h2 class="text-3xl md:text-5xl font-extrabold mb-8 md:mb-10">Canadian SMEs are Facing a Regulatory Tsunami.</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             <div>
-                <h3 class="text-2xl font-bold mb-4">The Pressure is Mounting</h3>
-                <ul class="text-lg space-y-4 text-gray-600">
+                <h3 class="text-xl md:text-2xl font-bold mb-4">The Pressure is Mounting</h3>
+                <ul class="text-base md:text-lg space-y-4 text-gray-600">
                     <li class="flex items-start gap-3">
                         <span class="text-green-600 font-bold mt-1">→</span>
                         <span>OSFI B-15 requires banks to disclose <strong class="text-gray-800">financed emissions</strong> from their SME clients.</span>
@@ -138,15 +143,15 @@
                 </ul>
             </div>
             <div>
-                <h3 class="text-2xl font-bold mb-4">SMEs are Unprepared</h3>
+                <h3 class="text-xl md:text-2xl font-bold mb-4">SMEs are Unprepared</h3>
                 <div class="space-y-4">
                     <div class="bg-gray-100 p-4 rounded-lg flex items-center gap-4">
-                        <div class="text-4xl font-bold text-green-700">18%</div>
-                        <div class="text-gray-600">of Canadian SMEs currently measure their emissions.</div>
+                        <div class="text-3xl md:text-4xl font-bold text-green-700">18%</div>
+                        <div class="text-gray-600 text-sm md:text-base">of Canadian SMEs currently measure their emissions.</div>
                     </div>
                     <div class="bg-gray-100 p-4 rounded-lg flex items-center gap-4">
-                        <div class="text-4xl font-bold text-green-700">$25K+</div>
-                        <div class="text-gray-600">is the typical starting cost for manual carbon consulting.</div>
+                        <div class="text-3xl md:text-4xl font-bold text-green-700">$25K+</div>
+                        <div class="text-gray-600 text-sm md:text-base">is the typical starting cost for manual carbon consulting.</div>
                     </div>
                 </div>
             </div>
@@ -156,24 +161,24 @@
 
 <!-- Slide 3: Market Opportunity -->
 <div class="slide items-center justify-center p-4">
-    <div class="slide-content p-12 animate-in">
-        <h1 class="text-2xl font-bold text-green-700 mb-2">The Opportunity</h1>
-        <h2 class="text-5xl font-extrabold mb-10">A Massive, Underserved, and Growing Market.</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-green-50 p-8 rounded-xl text-center border border-green-200">
-                <h3 class="text-6xl font-extrabold text-green-800 mb-2">$950M</h3>
-                <p class="text-lg font-semibold text-green-900">Serviceable Addressable Market</p>
-                <p class="text-gray-600 mt-1">172,000 Canadian Manufacturers</p>
+    <div class="slide-content p-6 md:p-12 animate-in">
+        <h1 class="text-xl md:text-2xl font-bold text-green-700 mb-2">The Opportunity</h1>
+        <h2 class="text-3xl md:text-5xl font-extrabold mb-8 md:mb-10">A Massive, Underserved, and Growing Market.</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            <div class="bg-green-50 p-6 md:p-8 rounded-xl text-center border border-green-200">
+                <h3 class="text-4xl md:text-6xl font-extrabold text-green-800 mb-2">$950M</h3>
+                <p class="text-base md:text-lg font-semibold text-green-900">Serviceable Addressable Market</p>
+                <p class="text-gray-600 mt-1 text-sm md:text-base">172,000 Canadian Manufacturers</p>
             </div>
-            <div class="bg-green-50 p-8 rounded-xl text-center border border-green-200">
-                <h3 class="text-6xl font-extrabold text-green-800 mb-2">23.3%</h3>
-                <p class="text-lg font-semibold text-green-900">Compound Annual Growth Rate</p>
-                <p class="text-gray-600 mt-1">For Carbon Accounting Software</p>
+            <div class="bg-green-50 p-6 md:p-8 rounded-xl text-center border border-green-200">
+                <h3 class="text-4xl md:text-6xl font-extrabold text-green-800 mb-2">23.3%</h3>
+                <p class="text-base md:text-lg font-semibold text-green-900">Compound Annual Growth Rate</p>
+                <p class="text-gray-600 mt-1 text-sm md:text-base">For Carbon Accounting Software</p>
             </div>
-            <div class="bg-green-50 p-8 rounded-xl text-center border border-green-200">
-                <h3 class="text-6xl font-extrabold text-green-800 mb-2">98%</h3>
-                <p class="text-lg font-semibold text-green-900">of Canadian Businesses are SMEs</p>
-                <p class="text-gray-600 mt-1">Yet they are systematically underserved</p>
+            <div class="bg-green-50 p-6 md:p-8 rounded-xl text-center border border-green-200">
+                <h3 class="text-4xl md:text-6xl font-extrabold text-green-800 mb-2">98%</h3>
+                <p class="text-base md:text-lg font-semibold text-green-900">of Canadian Businesses are SMEs</p>
+                <p class="text-gray-600 mt-1 text-sm md:text-base">Yet they are systematically underserved</p>
             </div>
         </div>
     </div>
@@ -181,25 +186,25 @@
 
 <!-- Slide 4: Our Solution -->
 <div class="slide items-center justify-center p-4">
-    <div class="slide-content p-12 animate-in">
-        <h1 class="text-2xl font-bold text-green-700 mb-2">Our Solution</h1>
-        <h2 class="text-5xl font-extrabold mb-10">The First AI Platform Built for Canadian SMEs.</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div class="slide-content p-6 md:p-12 animate-in">
+        <h1 class="text-xl md:text-2xl font-bold text-green-700 mb-2">Our Solution</h1>
+        <h2 class="text-3xl md:text-5xl font-extrabold mb-8 md:mb-10">The First AI Platform Built for Canadian SMEs.</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div class="bg-gray-100 p-6 rounded-xl">
-                <h3 class="text-xl font-bold mb-2">AI Document Processing</h3>
-                <p class="text-gray-600">75% reduction in data entry time by auto-reading utility bills and invoices.</p>
+                <h3 class="text-lg md:text-xl font-bold mb-2">AI Document Processing</h3>
+                <p class="text-gray-600 text-sm md:text-base">75% reduction in data entry time by auto-reading utility bills and invoices.</p>
             </div>
             <div class="bg-gray-100 p-6 rounded-xl">
-                <h3 class="text-xl font-bold mb-2">Canadian Compliance</h3>
-                <p class="text-gray-600">One-click, audit-ready reports for OSFI B-15 & TCFD using provincial data.</p>
+                <h3 class="text-lg md:text-xl font-bold mb-2">Canadian Compliance</h3>
+                <p class="text-gray-600 text-sm md:text-base">One-click, audit-ready reports for OSFI B-15 & TCFD using provincial data.</p>
             </div>
             <div class="bg-gray-100 p-6 rounded-xl">
-                <h3 class="text-xl font-bold mb-2">95% Cost Savings</h3>
-                <p class="text-gray-600">Affordable SaaS model vs. expensive, manual consulting.</p>
+                <h3 class="text-lg md:text-xl font-bold mb-2">95% Cost Savings</h3>
+                <p class="text-gray-600 text-sm md:text-base">Affordable SaaS model vs. expensive, manual consulting.</p>
             </div>
             <div class="bg-gray-100 p-6 rounded-xl">
-                <h3 class="text-xl font-bold mb-2">Carbon Marketplace</h3>
-                <p class="text-gray-600">Turn verified emission reductions into a new revenue stream.</p>
+                <h3 class="text-lg md:text-xl font-bold mb-2">Carbon Marketplace</h3>
+                <p class="text-gray-600 text-sm md:text-base">Turn verified emission reductions into a new revenue stream.</p>
             </div>
         </div>
     </div>
@@ -207,23 +212,23 @@
 
 <!-- Slide 5: Product Demo -->
 <div class="slide items-center justify-center p-4">
-    <div class="slide-content p-12 animate-in">
-        <h1 class="text-2xl font-bold text-green-700 mb-2">How It Works</h1>
-        <h2 class="text-5xl font-extrabold mb-10">From Complex Data to Clear Reports in 3 Steps.</h2>
+    <div class="slide-content p-6 md:p-12 animate-in">
+        <h1 class="text-xl md:text-2xl font-bold text-green-700 mb-2">How It Works</h1>
+        <h2 class="text-3xl md:text-5xl font-extrabold mb-8 md:mb-10">From Complex Data to Clear Reports in 3 Steps.</h2>
         <div class="bg-gray-100 rounded-xl p-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div>
                 <div class="text-5xl mb-4">📄</div>
-                <h3 class="text-2xl font-bold mb-2">1. Upload</h3>
+                <h3 class="text-xl md:text-2xl font-bold mb-2">1. Upload</h3>
                 <p class="text-gray-600">Securely drop utility bills, fuel receipts, and other documents into the platform.</p>
             </div>
             <div>
                 <div class="text-5xl mb-4">🤖</div>
-                <h3 class="text-2xl font-bold mb-2">2. Analyze</h3>
+                <h3 class="text-xl md:text-2xl font-bold mb-2">2. Analyze</h3>
                 <p class="text-gray-600">Our AI reads the documents, extracts the data, and calculates your carbon footprint.</p>
             </div>
             <div>
                 <div class="text-5xl mb-4">📊</div>
-                <h3 class="text-2xl font-bold mb-2">3. Report</h3>
+                <h3 class="text-xl md:text-2xl font-bold mb-2">3. Report</h3>
                 <p class="text-gray-600">Generate one-click, audit-ready reports for your bank, customers, or stakeholders.</p>
             </div>
         </div>
@@ -232,9 +237,9 @@
 
 <!-- Slide 6: Business Model -->
 <div class="slide items-center justify-center p-4">
-    <div class="slide-content p-12 animate-in">
-        <h1 class="text-2xl font-bold text-green-700 mb-2">Business Model</h1>
-        <h2 class="text-5xl font-extrabold mb-10">Simple, Scalable SaaS Subscriptions.</h2>
+    <div class="slide-content p-6 md:p-12 animate-in">
+        <h1 class="text-xl md:text-2xl font-bold text-green-700 mb-2">Business Model</h1>
+        <h2 class="text-3xl md:text-5xl font-extrabold mb-8 md:mb-10">Simple, Scalable SaaS Subscriptions.</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div class="bg-gray-100 p-8 rounded-xl border">
                 <h3 class="text-2xl font-bold mb-2">Starter</h3>
@@ -244,7 +249,7 @@
                     <li>✓ Basic Compliance Reports</li>
                 </ul>
             </div>
-            <div class="bg-green-700 text-white p-8 rounded-xl border-2 border-green-800 shadow-xl transform scale-105">
+            <div class="bg-green-700 text-white p-8 rounded-xl border-2 border-green-800 shadow-xl md:transform md:scale-105">
                 <h3 class="text-2xl font-bold mb-2">Professional</h3>
                 <p class="text-4xl font-extrabold mb-4">$249<span class="text-lg font-medium text-green-200">/mo</span></p>
                 <ul class="space-y-2">
@@ -268,9 +273,9 @@
 
 <!-- Slide 7: Go-to-Market -->
 <div class="slide items-center justify-center p-4">
-    <div class="slide-content p-12 animate-in">
-        <h1 class="text-2xl font-bold text-green-700 mb-2">Go-to-Market Strategy</h1>
-        <h2 class="text-5xl font-extrabold mb-10">A Phased Approach to Market Leadership.</h2>
+    <div class="slide-content p-6 md:p-12 animate-in">
+        <h1 class="text-xl md:text-2xl font-bold text-green-700 mb-2">Go-to-Market Strategy</h1>
+        <h2 class="text-3xl md:text-5xl font-extrabold mb-8 md:mb-10">A Phased Approach to Market Leadership.</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div class="bg-gray-100 p-6 rounded-xl">
                 <h3 class="text-xl font-bold mb-2">Phase 1: Validation</h3>
@@ -305,18 +310,18 @@
 
 <!-- Slide 8: Unit Economics -->
 <div class="slide items-center justify-center p-4">
-    <div class="slide-content p-12 animate-in">
-        <h1 class="text-2xl font-bold text-green-700 mb-2">Unit Economics</h1>
-        <h2 class="text-5xl font-extrabold mb-10">Built for Profitable, Sustainable Growth.</h2>
+    <div class="slide-content p-6 md:p-12 animate-in">
+        <h1 class="text-xl md:text-2xl font-bold text-green-700 mb-2">Unit Economics</h1>
+        <h2 class="text-3xl md:text-5xl font-extrabold mb-8 md:mb-10">Built for Profitable, Sustainable Growth.</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div class="bg-green-50 p-8 rounded-xl text-center border border-green-200">
                 <h3 class="text-lg font-semibold text-green-900">Customer Lifetime Value (LTV)</h3>
-                <p class="text-6xl font-extrabold text-green-800 my-2">$31.5K</p>
+                <p class="text-5xl md:text-6xl font-extrabold text-green-800 my-2">$31.5K</p>
                 <p class="text-gray-600">Based on 5.2 year lifespan & 85% gross margin</p>
             </div>
             <div class="bg-gray-100 p-8 rounded-xl text-center border">
                 <h3 class="text-lg font-semibold text-gray-800">Customer Acquisition Cost (CAC)</h3>
-                <p class="text-6xl font-extrabold text-gray-900 my-2">$1.8K</p>
+                <p class="text-5xl md:text-6xl font-extrabold text-gray-900 my-2">$1.8K</p>
                 <p class="text-gray-600">With a target payback period of just 4 months</p>
             </div>
         </div>
@@ -331,9 +336,9 @@
 
 <!-- Slide 9: Financial Projections -->
 <div class="slide items-center justify-center p-4">
-    <div class="slide-content p-12 animate-in">
-        <h1 class="text-2xl font-bold text-green-700 mb-2">Financial Projections</h1>
-        <h2 class="text-5xl font-extrabold mb-10">Capital-Efficient Path to Profitability.</h2>
+    <div class="slide-content p-6 md:p-12 animate-in">
+        <h1 class="text-xl md:text-2xl font-bold text-green-700 mb-2">Financial Projections</h1>
+        <h2 class="text-3xl md:text-5xl font-extrabold mb-8 md:mb-10">Capital-Efficient Path to Profitability.</h2>
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <div class="lg:col-span-2 bg-gray-50 p-6 rounded-xl border">
                 <h3 class="font-semibold text-lg mb-4">Projected Annual Recurring Revenue ($M)</h3>
@@ -361,17 +366,17 @@
 
 <!-- Slide 10: Competition -->
 <div class="slide items-center justify-center p-4">
-    <div class="slide-content p-12 animate-in">
-        <h1 class="text-2xl font-bold text-green-700 mb-2">Competitive Advantage</h1>
-        <h2 class="text-5xl font-extrabold mb-10">Purpose-Built for the Canadian Market.</h2>
-        <div class="overflow-hidden rounded-xl border">
+    <div class="slide-content p-6 md:p-12 animate-in">
+        <h1 class="text-xl md:text-2xl font-bold text-green-700 mb-2">Competitive Advantage</h1>
+        <h2 class="text-3xl md:text-5xl font-extrabold mb-8 md:mb-10">Purpose-Built for the Canadian Market.</h2>
+        <div class="overflow-x-auto rounded-xl border">
             <table class="w-full">
                 <thead class="bg-gray-100">
                     <tr class="text-left">
-                        <th class="p-4 font-semibold">Company</th>
-                        <th class="p-4 font-semibold">Target Market</th>
-                        <th class="p-4 font-semibold">Canadian Focus</th>
-                        <th class="p-4 font-semibold">SME-Ready</th>
+                        <th class="p-4 font-semibold text-sm">Company</th>
+                        <th class="p-4 font-semibold text-sm">Target Market</th>
+                        <th class="p-4 font-semibold text-sm">Canadian Focus</th>
+                        <th class="p-4 font-semibold text-sm">SME-Ready</th>
                     </tr>
                 </thead>
                 <tbody class="text-gray-600">
@@ -407,17 +412,19 @@
 
 <!-- Slide 11: Team -->
 <div class="slide items-center justify-center p-4">
-    <div class="slide-content p-12 animate-in">
-        <h1 class="text-2xl font-bold text-green-700 mb-2">The Team</h1>
-        <h2 class="text-5xl font-extrabold mb-10">Industry Knowledge Meets a Clear Vision.</h2>
+    <div class="slide-content p-6 md:p-12 animate-in">
+        <h1 class="text-xl md:text-2xl font-bold text-green-700 mb-2">The Team</h1>
+        <h2 class="text-3xl md:text-5xl font-extrabold mb-8 md:mb-10">Industry Knowledge Meets a Clear Vision.</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
-                <img src="https://i.imgur.com/qjgayad.jpeg" alt="Headshot of Philomina" class="w-32 h-32 rounded-full mx-auto mb-6 object-cover">
+                <img src="https://i.imgur.com/your-image-id.jpg" alt="Headshot of Philomina Nnona" class="w-32 h-32 rounded-full mx-auto mb-6 object-cover">
                 <h3 class="text-2xl font-bold text-center">Philomina Nnona</h3>
                 <p class="text-center text-gray-500 mb-4">Founder & CEO</p>
                 <ul class="space-y-2 text-gray-600">
                     <li>✓ Durham College Business Program</li>
-                    <li>✓ Deep understanding of SME operational challenges</li>
+                    <li>✓ 5+ years manufacturing experience</li>
+                    <li>✓ Deep SME industry knowledge</li>
+                    <li>✓ Bilingual (EN/FR)</li>
                 </ul>
             </div>
             <div>
@@ -425,13 +432,24 @@
                 <div class="space-y-4">
                     <div class="bg-gray-100 p-4 rounded-lg">
                         <p class="font-semibold">Technical Co-Founder/CTO</p>
-                        <p class="text-sm text-gray-600">Immediate priority. Seeking AI/ML expertise.</p>
+                        <p class="text-sm text-gray-600">Month 2-3 • 15-20% equity • AI/ML expertise</p>
                     </div>
                     <div class="bg-gray-100 p-4 rounded-lg">
-                        <p class="font-semibold">Advisory Board</p>
-                        <p class="text-sm text-gray-600">Actively recruiting experts in Canadian regulations, B2B SaaS, and manufacturing.</p>
+                        <p class="font-semibold">Senior Software Developer</p>
+                        <p class="text-sm text-gray-600">Month 6 • Full-stack • Regulatory focus</p>
+                    </div>
+                     <div class="bg-gray-100 p-4 rounded-lg">
+                        <p class="font-semibold">Customer Success Manager</p>
+                        <p class="text-sm text-gray-600">Month 9 • B2B SaaS experience</p>
                     </div>
                 </div>
+                 <h3 class="text-2xl font-bold mb-4 mt-8">Advisory Board Strategy</h3>
+                 <div class="grid grid-cols-2 gap-4 text-sm">
+                    <div class="bg-gray-100 p-3 rounded-lg text-center">Regulatory Expert</div>
+                    <div class="bg-gray-100 p-3 rounded-lg text-center">Industry Veteran</div>
+                    <div class="bg-gray-100 p-3 rounded-lg text-center">Tech Advisor</div>
+                    <div class="bg-gray-100 p-3 rounded-lg text-center">Business Development</div>
+                 </div>
             </div>
         </div>
     </div>
@@ -439,9 +457,9 @@
 
 <!-- Slide 12: The Ask -->
 <div class="slide items-center justify-center p-4">
-    <div class="slide-content p-12 animate-in">
-        <h1 class="text-2xl font-bold text-green-700 mb-2">The Ask</h1>
-        <h2 class="text-5xl font-extrabold mb-10">Seeking $250,000 to Launch and Scale.</h2>
+    <div class="slide-content p-6 md:p-12 animate-in">
+        <h1 class="text-xl md:text-2xl font-bold text-green-700 mb-2">The Ask</h1>
+        <h2 class="text-3xl md:text-5xl font-extrabold mb-8 md:mb-10">Seeking $250,000 to Launch and Scale.</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
                 <h3 class="text-2xl font-bold mb-4">Funding Sources</h3>
@@ -466,22 +484,22 @@
 
 <!-- Slide 13: Impact -->
 <div class="slide items-center justify-center p-4">
-    <div class="slide-content p-12 animate-in">
-        <h1 class="text-2xl font-bold text-green-700 mb-2">The Impact</h1>
-        <h2 class="text-5xl font-extrabold mb-10">Profit Meets Purpose.</h2>
+    <div class="slide-content p-6 md:p-12 animate-in">
+        <h1 class="text-xl md:text-2xl font-bold text-green-700 mb-2">The Impact</h1>
+        <h2 class="text-3xl md:text-5xl font-extrabold mb-8 md:mb-10">Profit Meets Purpose.</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div class="bg-green-50 p-8 rounded-xl text-center border border-green-200">
-                <p class="text-5xl font-extrabold text-green-800 mb-2">50,000+</p>
+                <p class="text-4xl md:text-5xl font-extrabold text-green-800 mb-2">50,000+</p>
                 <p class="text-lg font-semibold text-green-900">Tonnes CO₂e Reduced</p>
                 <p class="text-gray-600 mt-1">Annually by 2028</p>
             </div>
             <div class="bg-green-50 p-8 rounded-xl text-center border border-green-200">
-                <p class="text-5xl font-extrabold text-green-800 mb-2">750+</p>
+                <p class="text-4xl md:text-5xl font-extrabold text-green-800 mb-2">750+</p>
                 <p class="text-lg font-semibold text-green-900">Canadian SMEs Empowered</p>
                 <p class="text-gray-600 mt-1">By 2028</p>
             </div>
             <div class="bg-green-50 p-8 rounded-xl text-center border border-green-200">
-                <p class="text-5xl font-extrabold text-green-800 mb-2">15+</p>
+                <p class="text-4xl md:text-5xl font-extrabold text-green-800 mb-2">15+</p>
                 <p class="text-lg font-semibold text-green-900">Cleantech Jobs Created</p>
                 <p class="text-gray-600 mt-1">In Canada by 2028</p>
             </div>
@@ -493,11 +511,11 @@
 <div class="slide items-center justify-center p-4">
     <div class="slide-content flex items-center justify-center p-12 text-white" style="background-image: linear-gradient(135deg, #14532d, #15803d);">
         <div class="text-center animate-in">
-            <h1 class="text-6xl font-extrabold mb-8">Let's Build the Future of Carbon Management.</h1>
-            <div class="text-xl mb-10 text-green-200">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-8">Let's Build the Future of Carbon Management.</h1>
+            <div class="text-lg md:text-xl mb-10 text-green-200">
                 <p>The market is ready. The technology is defined. The impact is clear.</p>
             </div>
-            <div class="text-xl">
+            <div class="text-lg md:text-xl">
                 <p class="font-bold">Philomina Nnona - Founder & CEO</p>
                 <p>nnonaphilomina@gmail.com | +12899433296</p>
             </div>
@@ -612,5 +630,4 @@ showSlide(0);
 </script>
 
 </body>
-    
 </html>
