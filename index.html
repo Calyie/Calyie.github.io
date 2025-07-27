@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<!-- saved from url=(0062)file:///Users/mac/Downloads/borealcarbon_pitch_deck%20(1).html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BorealCarbon - Pitch Deck</title>
+    <script src="./BorealCarbon - Pitch Deck_files/saved_resource"></script>
+    <script src="./BorealCarbon - Pitch Deck_files/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="./BorealCarbon - Pitch Deck_files/css2" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6; /* Light gray background */
+        }
+        .slide {
+            min-height: 100vh;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            padding: 2rem;
+            align-items: center;
+            justify-content: center;
+        }
+        .slide.active {
+            display: flex;
+            opacity: 1;
+        }
+        .progress-bar-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background-color: #e5e7eb;
+            z-index: 1000;
+        }
+        .progress-bar {
+            height: 100%;
+            background-color: #16a34a; /* Updated green */
+            transition: width 0.3s ease-out;
+        }
+        .nav-button {
+            position: fixed;
+            bottom: 20px;
+            background-color: #1f2937;
+            color: white;
+            border-radius: 9999px;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            z-index: 1001;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        .nav-button:hover {
+            background-color: #374151;
+        }
+        #prevBtn {
+            left: 20px;
+        }
+        #nextBtn {
+            right: 20px;
+        }
+        .slide-content {
+            background-color: #ffffff;
+            color: #1f2937;
+            border-radius: 24px;
+            width: 100%;
+            max-width: 1200px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            border: 1px solid #e5e7eb;
+            overflow: hidden;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-in {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.16 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.mx-auto{margin-left:auto;margin-right:auto}.my-2{margin-top:0.5rem;margin-bottom:0.5rem}.mb-1{margin-bottom:0.25rem}.mb-10{margin-bottom:2.5rem}.mb-2{margin-bottom:0.5rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mt-1{margin-top:0.25rem}.mt-6{margin-top:1.5rem}.mt-8{margin-top:2rem}.inline-block{display:inline-block}.flex{display:flex}.grid{display:grid}.h-32{height:8rem}.h-80{height:20rem}.w-32{width:8rem}.w-full{width:100%}.scale-105{--tw-scale-x:1.05;--tw-scale-y:1.05;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.transform{transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-center{justify-content:center}.gap-12{gap:3rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.gap-8{gap:2rem}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-2{border-width:2px}.border-green-200{--tw-border-opacity:1;border-color:rgb(187 247 208 / var(--tw-border-opacity, 1))}.border-green-800{--tw-border-opacity:1;border-color:rgb(22 101 52 / var(--tw-border-opacity, 1))}.bg-gray-100{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity, 1))}.bg-gray-50{--tw-bg-opacity:1;background-color:rgb(249 250 251 / var(--tw-bg-opacity, 1))}.bg-green-100{--tw-bg-opacity:1;background-color:rgb(220 252 231 / var(--tw-bg-opacity, 1))}.bg-green-50{--tw-bg-opacity:1;background-color:rgb(240 253 244 / var(--tw-bg-opacity, 1))}.bg-green-700{--tw-bg-opacity:1;background-color:rgb(21 128 61 / var(--tw-bg-opacity, 1))}.bg-white\/20{background-color:rgb(255 255 255 / 0.2)}.object-cover{object-fit:cover}.p-12{padding:3rem}.p-4{padding:1rem}.p-6{padding:1.5rem}.p-8{padding:2rem}.px-12{padding-left:3rem;padding-right:3rem}.px-4{padding-left:1rem;padding-right:1rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.text-left{text-align:left}.text-center{text-align:center}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-5xl{font-size:3rem;line-height:1}.text-6xl{font-size:3.75rem;line-height:1}.text-8xl{font-size:6rem;line-height:1}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.font-bold{font-weight:700}.font-extrabold{font-weight:800}.font-medium{font-weight:500}.font-semibold{font-weight:600}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.text-gray-800{--tw-text-opacity:1;color:rgb(31 41 55 / var(--tw-text-opacity, 1))}.text-gray-900{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity, 1))}.text-green-100{--tw-text-opacity:1;color:rgb(220 252 231 / var(--tw-text-opacity, 1))}.text-green-200{--tw-text-opacity:1;color:rgb(187 247 208 / var(--tw-text-opacity, 1))}.text-green-600{--tw-text-opacity:1;color:rgb(22 163 74 / var(--tw-text-opacity, 1))}.text-green-700{--tw-text-opacity:1;color:rgb(21 128 61 / var(--tw-text-opacity, 1))}.text-green-800{--tw-text-opacity:1;color:rgb(22 101 52 / var(--tw-text-opacity, 1))}.text-green-900{--tw-text-opacity:1;color:rgb(20 83 45 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.shadow-xl{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}@media (min-width: 768px){.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}}@media (min-width: 1024px){.lg\:col-span-2{grid-column:span 2 / span 2}.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.lg\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}}</style></head>
+<body class="text-gray-800">
+
+<!-- Progress Bar & Navigation -->
+<div class="progress-bar-container">
+    <div class="progress-bar" id="progressBar" style="width: 78.5714%;"></div>
+</div>
+<button id="prevBtn" class="nav-button">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"></path></svg>
+</button>
+<button id="nextBtn" class="nav-button">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+</button>
+
+
+<!-- Slide Container -->
+<div id="slideContainer">
+
+<!-- Slide 1: Title Slide -->
+<div class="slide items-center justify-center p-4">
+    <div class="slide-content flex items-center justify-center p-12 text-white" style="background-image: linear-gradient(135deg, #14532d, #15803d);">
+        <div class="text-center animate-in">
+            <h1 class="text-8xl font-extrabold mb-4">BorealCarbon</h1>
+            <h2 class="text-3xl mb-8 text-green-200">AI-Powered Carbon Management for Canadian SMEs.</h2>
+            <div class="text-xl space-y-2 text-green-100">
+                <p><strong>Philomina Nnona</strong> - Founder &amp; CEO</p>
+                <p>nnonaphilomina@gmail.com | +12899433296</p>
+                <p class="font-bold mt-6 text-white bg-white/20 inline-block px-4 py-2 rounded-lg">Seeking $250K Seed Funding</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Slide 2: The Problem -->
+<div class="slide items-center justify-center p-4">
+    <div class="slide-content p-12 animate-in">
+        <h1 class="text-2xl font-bold text-green-700 mb-2">The Problem</h1>
+        <h2 class="text-5xl font-extrabold mb-10">Canadian SMEs are Facing a Regulatory Tsunami.</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+                <h3 class="text-2xl font-bold mb-4">The Pressure is Mounting</h3>
+                <ul class="text-lg space-y-4 text-gray-600">
+                    <li class="flex items-start gap-3">
+                        <span class="text-green-600 font-bold mt-1">→</span>
+                        <span>OSFI B-15 requires banks to disclose <strong class="text-gray-800">financed emissions</strong> from their SME clients.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-green-600 font-bold mt-1">→</span>
+                        <span>Large corporations now need <strong class="text-gray-800">Scope 3 data</strong> from their entire supply chain.</span>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-2xl font-bold mb-4">SMEs are Unprepared</h3>
+                <div class="space-y-4">
+                    <div class="bg-gray-100 p-4 rounded-lg flex items-center gap-4">
+                        <div class="text-4xl font-bold text-green-700">18%</div>
+                        <div class="text-gray-600">of Canadian SMEs currently measure their emissions.</div>
+                    </div>
+                    <div class="bg-gray-100 p-4 rounded-lg flex items-center gap-4">
+                        <div class="text-4xl font-bold text-green-700">$25K+</div>
+                        <div class="text-gray-600">is the typical starting cost for manual carbon consulting.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 3: Market Opportunity -->
+<div class="slide items-center justify-center p-4">
+    <div class="slide-content p-12 animate-in">
+        <h1 class="text-2xl font-bold text-green-700 mb-2">The Opportunity</h1>
+        <h2 class="text-5xl font-extrabold mb-10">A Massive, Underserved, and Growing Market.</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-green-50 p-8 rounded-xl text-center border border-green-200">
+                <h3 class="text-6xl font-extrabold text-green-800 mb-2">$950M</h3>
+                <p class="text-lg font-semibold text-green-900">Serviceable Addressable Market</p>
+                <p class="text-gray-600 mt-1">172,000 Canadian Manufacturers</p>
+            </div>
+            <div class="bg-green-50 p-8 rounded-xl text-center border border-green-200">
+                <h3 class="text-6xl font-extrabold text-green-800 mb-2">23.3%</h3>
+                <p class="text-lg font-semibold text-green-900">Compound Annual Growth Rate</p>
+                <p class="text-gray-600 mt-1">For Carbon Accounting Software</p>
+            </div>
+            <div class="bg-green-50 p-8 rounded-xl text-center border border-green-200">
+                <h3 class="text-6xl font-extrabold text-green-800 mb-2">98%</h3>
+                <p class="text-lg font-semibold text-green-900">of Canadian Businesses are SMEs</p>
+                <p class="text-gray-600 mt-1">Yet they are systematically underserved</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 4: Our Solution -->
+<div class="slide items-center justify-center p-4">
+    <div class="slide-content p-12 animate-in">
+        <h1 class="text-2xl font-bold text-green-700 mb-2">Our Solution</h1>
+        <h2 class="text-5xl font-extrabold mb-10">The First AI Platform Built for Canadian SMEs.</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-gray-100 p-6 rounded-xl">
+                <h3 class="text-xl font-bold mb-2">AI Document Processing</h3>
+                <p class="text-gray-600">75% reduction in data entry time by auto-reading utility bills and invoices.</p>
+            </div>
+            <div class="bg-gray-100 p-6 rounded-xl">
+                <h3 class="text-xl font-bold mb-2">Canadian Compliance</h3>
+                <p class="text-gray-600">One-click, audit-ready reports for OSFI B-15 &amp; TCFD using provincial data.</p>
+            </div>
+            <div class="bg-gray-100 p-6 rounded-xl">
+                <h3 class="text-xl font-bold mb-2">95% Cost Savings</h3>
+                <p class="text-gray-600">Affordable SaaS model vs. expensive, manual consulting.</p>
+            </div>
+            <div class="bg-gray-100 p-6 rounded-xl">
+                <h3 class="text-xl font-bold mb-2">Carbon Marketplace</h3>
+                <p class="text-gray-600">Turn verified emission reductions into a new revenue stream.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 5: Product Demo -->
+<div class="slide items-center justify-center p-4">
+    <div class="slide-content p-12 animate-in">
+        <h1 class="text-2xl font-bold text-green-700 mb-2">How It Works</h1>
+        <h2 class="text-5xl font-extrabold mb-10">From Complex Data to Clear Reports in 3 Steps.</h2>
+        <div class="bg-gray-100 rounded-xl p-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div>
+                <div class="text-5xl mb-4">📄</div>
+                <h3 class="text-2xl font-bold mb-2">1. Upload</h3>
+                <p class="text-gray-600">Securely drop utility bills, fuel receipts, and other documents into the platform.</p>
+            </div>
+            <div>
+                <div class="text-5xl mb-4">🤖</div>
+                <h3 class="text-2xl font-bold mb-2">2. Analyze</h3>
+                <p class="text-gray-600">Our AI reads the documents, extracts the data, and calculates your carbon footprint.</p>
+            </div>
+            <div>
+                <div class="text-5xl mb-4">📊</div>
+                <h3 class="text-2xl font-bold mb-2">3. Report</h3>
+                <p class="text-gray-600">Generate one-click, audit-ready reports for your bank, customers, or stakeholders.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 6: Business Model -->
+<div class="slide items-center justify-center p-4">
+    <div class="slide-content p-12 animate-in">
+        <h1 class="text-2xl font-bold text-green-700 mb-2">Business Model</h1>
+        <h2 class="text-5xl font-extrabold mb-10">Simple, Scalable SaaS Subscriptions.</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-gray-100 p-8 rounded-xl border">
+                <h3 class="text-2xl font-bold mb-2">Starter</h3>
+                <p class="text-4xl font-extrabold mb-4">$149<span class="text-lg font-medium text-gray-500">/mo</span></p>
+                <ul class="text-gray-600 space-y-2">
+                    <li>✓ Scope 1 &amp; 2 Tracking</li>
+                    <li>✓ Basic Compliance Reports</li>
+                </ul>
+            </div>
+            <div class="bg-green-700 text-white p-8 rounded-xl border-2 border-green-800 shadow-xl transform scale-105">
+                <h3 class="text-2xl font-bold mb-2">Professional</h3>
+                <p class="text-4xl font-extrabold mb-4">$249<span class="text-lg font-medium text-green-200">/mo</span></p>
+                <ul class="space-y-2">
+                    <li>✓ Everything in Starter</li>
+                    <li>✓ Advanced Analytics</li>
+                    <li>✓ Scope 3 Estimation</li>
+                </ul>
+            </div>
+            <div class="bg-gray-100 p-8 rounded-xl border">
+                <h3 class="text-2xl font-bold mb-2">Enterprise</h3>
+                <p class="text-4xl font-extrabold mb-4">$399<span class="text-lg font-medium text-gray-500">/mo</span></p>
+                <ul class="text-gray-600 space-y-2">
+                    <li>✓ Everything in Professional</li>
+                    <li>✓ API Access &amp; Integrations</li>
+                    <li>✓ Custom Reporting</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 7: Go-to-Market -->
+<div class="slide items-center justify-center p-4">
+    <div class="slide-content p-12 animate-in">
+        <h1 class="text-2xl font-bold text-green-700 mb-2">Go-to-Market Strategy</h1>
+        <h2 class="text-5xl font-extrabold mb-10">A Phased Approach to Market Leadership.</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-gray-100 p-6 rounded-xl">
+                <h3 class="text-xl font-bold mb-2">Phase 1: Validation</h3>
+                <p class="text-sm text-gray-500 mb-4">First 12 Months</p>
+                <ul class="space-y-2 text-gray-600">
+                    <li>• Founder-led sales</li>
+                    <li>• Acquire first 25 pilot customers</li>
+                    <li>• Achieve $180K ARR</li>
+                </ul>
+            </div>
+            <div class="bg-gray-100 p-6 rounded-xl">
+                <h3 class="text-xl font-bold mb-2">Phase 2: Scaling</h3>
+                <p class="text-sm text-gray-500 mb-4">Months 12-24</p>
+                <ul class="space-y-2 text-gray-600">
+                    <li>• Build inside sales team</li>
+                    <li>• Develop channel partnerships</li>
+                    <li>• Reach 150 customers &amp; $1.1M ARR</li>
+                </ul>
+            </div>
+            <div class="bg-gray-100 p-6 rounded-xl">
+                <h3 class="text-xl font-bold mb-2">Phase 3: Leadership</h3>
+                <p class="text-sm text-gray-500 mb-4">Year 3+</p>
+                <ul class="space-y-2 text-gray-600">
+                    <li>• Introduce product-led growth</li>
+                    <li>• Geographic expansion</li>
+                    <li>• Scale to 750+ customers</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 8: Unit Economics -->
+<div class="slide items-center justify-center p-4">
+    <div class="slide-content p-12 animate-in">
+        <h1 class="text-2xl font-bold text-green-700 mb-2">Unit Economics</h1>
+        <h2 class="text-5xl font-extrabold mb-10">Built for Profitable, Sustainable Growth.</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-green-50 p-8 rounded-xl text-center border border-green-200">
+                <h3 class="text-lg font-semibold text-green-900">Customer Lifetime Value (LTV)</h3>
+                <p class="text-6xl font-extrabold text-green-800 my-2">$31.5K</p>
+                <p class="text-gray-600">Based on 5.2 year lifespan &amp; 85% gross margin</p>
+            </div>
+            <div class="bg-gray-100 p-8 rounded-xl text-center border">
+                <h3 class="text-lg font-semibold text-gray-800">Customer Acquisition Cost (CAC)</h3>
+                <p class="text-6xl font-extrabold text-gray-900 my-2">$1.8K</p>
+                <p class="text-gray-600">With a target payback period of just 4 months</p>
+            </div>
+        </div>
+        <div class="mt-8 text-center">
+            <div class="bg-green-700 inline-block px-12 py-4 rounded-xl text-white">
+                <div class="text-4xl font-bold mb-1">17.5x</div>
+                <div class="text-lg">LTV to CAC Ratio</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 9: Financial Projections -->
+<div class="slide items-center justify-center p-4">
+    <div class="slide-content p-12 animate-in">
+        <h1 class="text-2xl font-bold text-green-700 mb-2">Financial Projections</h1>
+        <h2 class="text-5xl font-extrabold mb-10">Capital-Efficient Path to Profitability.</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-2 bg-gray-50 p-6 rounded-xl border">
+                <h3 class="font-semibold text-lg mb-4">Projected Annual Recurring Revenue ($M)</h3>
+                <div class="h-80">
+                    <canvas id="revenueChart" width="1348" height="640" style="display: block; box-sizing: border-box; height: 320px; width: 674px;"></canvas>
+                </div>
+            </div>
+            <div class="space-y-6">
+                <div class="bg-gray-100 p-6 rounded-xl">
+                    <h3 class="font-semibold text-gray-600">Break-even</h3>
+                    <p class="text-3xl font-bold">Q4 2026</p>
+                </div>
+                <div class="bg-gray-100 p-6 rounded-xl">
+                    <h3 class="font-semibold text-gray-600">Gross Margin</h3>
+                    <p class="text-3xl font-bold">85%</p>
+                </div>
+                <div class="bg-gray-100 p-6 rounded-xl">
+                    <h3 class="font-semibold text-gray-600">EBITDA Margin (2028)</h3>
+                    <p class="text-3xl font-bold">39%</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 10: Competition -->
+<div class="slide items-center justify-center p-4">
+    <div class="slide-content p-12 animate-in">
+        <h1 class="text-2xl font-bold text-green-700 mb-2">Competitive Advantage</h1>
+        <h2 class="text-5xl font-extrabold mb-10">Purpose-Built for the Canadian Market.</h2>
+        <div class="overflow-hidden rounded-xl border">
+            <table class="w-full">
+                <thead class="bg-gray-100">
+                    <tr class="text-left">
+                        <th class="p-4 font-semibold">Company</th>
+                        <th class="p-4 font-semibold">Target Market</th>
+                        <th class="p-4 font-semibold">Canadian Focus</th>
+                        <th class="p-4 font-semibold">SME-Ready</th>
+                    </tr>
+                </thead>
+                <tbody class="text-gray-600">
+                    <tr class="bg-green-100 font-bold text-green-900">
+                        <td class="p-4">BorealCarbon</td>
+                        <td class="p-4">Canadian SMEs</td>
+                        <td class="p-4">✓ High</td>
+                        <td class="p-4">✓ Yes</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4">Sweep</td>
+                        <td class="p-4">Enterprise</td>
+                        <td class="p-4">✗ Limited</td>
+                        <td class="p-4">✗ No</td>
+                    </tr>
+                    <tr class="bg-gray-50">
+                        <td class="p-4">Persefoni</td>
+                        <td class="p-4">Enterprise</td>
+                        <td class="p-4">✗ None</td>
+                        <td class="p-4">✗ No</td>
+                    </tr>
+                    <tr>
+                        <td class="p-4">Consultants</td>
+                        <td class="p-4">All sizes</td>
+                        <td class="p-4">~ Variable</td>
+                        <td class="p-4">✗ Manual</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 11: Team -->
+<div class="slide items-center justify-center p-4 active">
+    <div class="slide-content p-12 animate-in">
+        <h1 class="text-2xl font-bold text-green-700 mb-2">The Team</h1>
+        <h2 class="text-5xl font-extrabold mb-10">Industry Knowledge Meets a Clear Vision.</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div>
+                <img src="https://i.imgur.com/qjgayad.jpeg" alt="Headshot of Philomina" class="w-32 h-32 rounded-full mx-auto mb-6 object-cover">
+                <h3 class="text-2xl font-bold text-center">Philomina Nnona</h3>
+                <p class="text-center text-gray-500 mb-4">Founder &amp; CEO</p>
+                <ul class="space-y-2 text-gray-600">
+                    <li>✓ Durham College Business Program</li>
+                    <li>✓ Deep understanding of SME operational challenges</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-2xl font-bold mb-4">Building the A-Team</h3>
+                <div class="space-y-4">
+                    <div class="bg-gray-100 p-4 rounded-lg">
+                        <p class="font-semibold">Technical Co-Founder/CTO</p>
+                        <p class="text-sm text-gray-600">Immediate priority. Seeking AI/ML expertise.</p>
+                    </div>
+                    <div class="bg-gray-100 p-4 rounded-lg">
+                        <p class="font-semibold">Advisory Board</p>
+                        <p class="text-sm text-gray-600">Actively recruiting experts in Canadian regulations, B2B SaaS, and manufacturing.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 12: The Ask -->
+<div class="slide items-center justify-center p-4">
+    <div class="slide-content p-12 animate-in">
+        <h1 class="text-2xl font-bold text-green-700 mb-2">The Ask</h1>
+        <h2 class="text-5xl font-extrabold mb-10">Seeking $250,000 to Launch and Scale.</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div>
+                <h3 class="text-2xl font-bold mb-4">Funding Sources</h3>
+                 <div class="space-y-4">
+                    <div class="bg-gray-100 p-4 rounded-lg">40% Government Grants</div>
+                    <div class="bg-gray-100 p-4 rounded-lg">40% Angel Investors</div>
+                    <div class="bg-gray-100 p-4 rounded-lg">20% Founder Investment</div>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-2xl font-bold mb-4">Use of Funds</h3>
+                <div class="space-y-4">
+                    <div class="bg-green-100 p-4 rounded-lg">45% Product Development</div>
+                    <div class="bg-green-100 p-4 rounded-lg">30% Customer Acquisition</div>
+                    <div class="bg-green-100 p-4 rounded-lg">15% Operations</div>
+                    <div class="bg-green-100 p-4 rounded-lg">10% Working Capital</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 13: Impact -->
+<div class="slide items-center justify-center p-4">
+    <div class="slide-content p-12 animate-in">
+        <h1 class="text-2xl font-bold text-green-700 mb-2">The Impact</h1>
+        <h2 class="text-5xl font-extrabold mb-10">Profit Meets Purpose.</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-green-50 p-8 rounded-xl text-center border border-green-200">
+                <p class="text-5xl font-extrabold text-green-800 mb-2">50,000+</p>
+                <p class="text-lg font-semibold text-green-900">Tonnes CO₂e Reduced</p>
+                <p class="text-gray-600 mt-1">Annually by 2028</p>
+            </div>
+            <div class="bg-green-50 p-8 rounded-xl text-center border border-green-200">
+                <p class="text-5xl font-extrabold text-green-800 mb-2">750+</p>
+                <p class="text-lg font-semibold text-green-900">Canadian SMEs Empowered</p>
+                <p class="text-gray-600 mt-1">By 2028</p>
+            </div>
+            <div class="bg-green-50 p-8 rounded-xl text-center border border-green-200">
+                <p class="text-5xl font-extrabold text-green-800 mb-2">15+</p>
+                <p class="text-lg font-semibold text-green-900">Cleantech Jobs Created</p>
+                <p class="text-gray-600 mt-1">In Canada by 2028</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Slide 14: Call to Action -->
+<div class="slide items-center justify-center p-4">
+    <div class="slide-content flex items-center justify-center p-12 text-white" style="background-image: linear-gradient(135deg, #14532d, #15803d);">
+        <div class="text-center animate-in">
+            <h1 class="text-6xl font-extrabold mb-8">Let's Build the Future of Carbon Management.</h1>
+            <div class="text-xl mb-10 text-green-200">
+                <p>The market is ready. The technology is defined. The impact is clear.</p>
+            </div>
+            <div class="text-xl">
+                <p class="font-bold">Philomina Nnona - Founder &amp; CEO</p>
+                <p>nnonaphilomina@gmail.com | +12899433296</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<!-- Navigation and Chart Script -->
+<script>
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+const totalSlides = slides.length;
+const progressBar = document.getElementById('progressBar');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+
+
+function showSlide(n) {
+    if (slides[currentSlide]) {
+        slides[currentSlide].classList.remove('active');
+    }
+    currentSlide = (n + totalSlides) % totalSlides;
+    if (slides[currentSlide]) {
+        slides[currentSlide].classList.add('active');
+    }
+    
+    progressBar.style.width = `${((currentSlide + 1) / totalSlides) * 100}%`;
+    
+    if (currentSlide === 8) { // Financial Projections slide index
+        initRevenueChart();
+    }
+}
+
+function nextSlide() {
+    showSlide(currentSlide + 1);
+}
+
+function prevSlide() {
+    showSlide(currentSlide - 1);
+}
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowRight' || e.key === ' ') {
+        e.preventDefault();
+        nextSlide();
+    } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        prevSlide();
+    }
+});
+
+prevBtn.addEventListener('click', prevSlide);
+nextBtn.addEventListener('click', nextSlide);
+
+let revenueChartInstance = null;
+function initRevenueChart() {
+    const ctx = document.getElementById('revenueChart');
+    if (ctx && !revenueChartInstance) {
+        revenueChartInstance = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['2026', '2027', '2028'],
+                datasets: [{
+                    label: 'Revenue ($M)',
+                    data: [0.18, 1.1, 4.2],
+                    backgroundColor: '#10b981',
+                    borderColor: '#059669',
+                    borderWidth: 2,
+                    borderRadius: 8
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return ` $${context.raw}M`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: '#e5e7eb' },
+                        ticks: {
+                            color: '#374151',
+                            callback: function(value) {
+                                return '$' + value + 'M';
+                            }
+                        }
+                    },
+                    x: {
+                        grid: { display: false },
+                        ticks: { color: '#374151' }
+                    }
+                }
+            }
+        });
+    }
+}
+
+showSlide(0);
+</script>
+
+
+
+</body></html>
